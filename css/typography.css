@@ -1,0 +1,26 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  font-family: var(--main-font);
+
+}
+
+label{ 
+  font-size: 0.8rem;
+  font-weight: var(--fw-500);
+  font-family: var(--main-font); 
+  color: var(--purple-950); 
+  text-transform: uppercase; 
+
+}
+
+input::placeholder{ font-family: var(--main-font); }
+
+input[type="text"]{
+  font-family: var(--main-font);
+
+}

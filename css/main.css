@@ -1,0 +1,49 @@
+@import url('/css/variables.css');
+
+@import url('/css/typography.css');
+
+@import url('/css/components.css');
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+
+}
+
+*{
+  margin: 0;
+
+}
+
+body, html{
+  margin: 0;
+  padding: 0;
+
+}
+
+main{
+  display: grid;
+  grid-template-columns: 35% 65%;
+  min-height: 100dvh;
+
+}
+
+.container__cards{
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100dvh;
+  background-image: url('/images/bg-main-desktop.png');
+  background-size: cover;
+
+}
+
+.container__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+

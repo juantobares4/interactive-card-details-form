@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root{
+  /* Colors */
+  --red-400: hsl(0, 100%, 66%);
+  --border-color: hsl(278, 94%, 30%);
+  --white-color: hsl(0, 100%, 100%);
+  --gray-200: hsl(270, 3%, 87%);
+  --gray-400: hsl(212, 12%, 71%);
+  --purple-950: hsl(278, 68%, 11%);
+
+  /* Font */
+  --main-font: "Space Grotesk", sans-serif;
+  --fw-500: 500;
+  --fs-base: 1.125;
+
+  /* Border radius */
+  --border-radius: 0.375rem;
+
+}

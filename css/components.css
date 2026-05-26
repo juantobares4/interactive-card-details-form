@@ -1,0 +1,68 @@
+form{
+  width: 100%;
+  max-width: 400px;
+
+}
+
+.form__fields{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.form__row{
+  display: flex;
+  gap: 0.5em;
+
+}
+
+.form__row input{
+  min-width: 0;
+  width: 100%;
+
+}
+
+#inputMonth,
+#inputYear{
+  flex: 1;
+
+}
+
+#inputCVC{
+  flex: 2;
+
+}
+
+input{
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+
+}
+
+input:focus{ outline: none; border-color: var(--border-color); }
+
+.form__label{
+  padding-bottom: 0.5rem;
+
+}
+
+.form__button{
+  display: flex;
+  justify-content: center;
+
+}
+
+.form__button button{
+  margin-top: 1rem;
+  border-radius: var(--border-radius);
+  padding: 0.6rem;
+  min-width: 100%;
+  border: none;
+  font-family: var(--main-font);
+  background-color: var(--purple-950);
+  color: var(--white-color);
+
+}
+
+.form__button button:hover{ background-color: hsl(278, 94%, 30%); }

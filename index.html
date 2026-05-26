@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Interactive Card Details Form | Frontend Mentor By Juan Cruz Tobares</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+  <main class="main__container">
+    <aside class="container__cards">
+
+    </aside>
+    <section class="container__form">
+      <form action="">
+        <div class="form__fields mb-3">
+          <div class="form__label">
+            <label 
+              for="inputCardholder" 
+            >
+              Cardholder name
+            </label>
+          </div>
+          <input 
+            id="inputCardholder"
+            type="text" 
+            placeholder="eg. Jane Appleseed" 
+            aria-label="Cardholder" 
+            name="cardholder"
+          >
+        </div>
+        <div class="form__fields mb-3">
+          <div class="form__label">
+            <label 
+              for="inputCardNumber" 
+            >
+              Card Number
+            </label>
+          </div>
+          <input
+            id="inputCardNumber"
+            type="text" 
+            placeholder="e.g. 1234 5678 9123 0000"
+            aria-label="Card number" 
+            name="cardnumber"
+          >
+        </div>
+        <div class="mb-3">
+          <div class="form__label">
+            <label 
+              for="inputMonth"
+            >
+              Exp. Date (mm/yy)
+            </label>
+          </div>
+          <div class="form__row">
+            <input 
+              id="inputMonth"
+              type="text"
+              inputmode="numeric"
+              maxlength="2"
+              placeholder="MM" 
+              aria-label="Month Expiration" 
+              aria-describedby="basic-addon1"
+              name="month"
+            >
+  
+            <input
+              id="inputYear"
+              type="text"
+              inputmode="numeric"
+              maxlength="2"
+              placeholder="YY" 
+              aria-label="Year Expiration" 
+              aria-describedby="basic-addon1"
+              name="year"
+            >
+  
+            <input 
+              id="inputCVC"
+              type="text"
+              inputmode="numeric"
+              maxlength="3"
+              placeholder="eg. 123" 
+              aria-label="CVC" 
+              aria-describedby="basic-addon1"
+              name="cvc"
+            >  
+          </div>
+        </div>
+        <div class="form__button">
+          <button type="submit">Confirm</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
