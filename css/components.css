@@ -1,10 +1,11 @@
 /* Cards Styles */
 
+/* Front */
 .card{ 
   background-repeat: no-repeat;
   position: absolute;
-  width: 447px;
-  height: 245px;
+  min-width: 447px;
+  min-height: 245px;
   filter: drop-shadow(
     0 0 5px black
 
@@ -16,8 +17,6 @@
   background-image: url('/images/bg-card-front.png');
   top: 20%;
   left: 35%;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
 
 }
 
@@ -51,17 +50,33 @@
   
 }
 
-.card__owner{
+.card__owner, .card__expiry{
   text-transform: uppercase;
   font-weight: var(--fw-500);
 
 }
 
+/* Back */
+
 .card--back{
   background-image: url('/images/bg-card-back.png');
-  position: absolute;
   top: 55%;
   left: 55%;
+  position: relative;
+
+}
+
+.card__cvc{
+  position: absolute;
+  top: 45%;
+  left: 65%;
+
+}
+
+.card__cvc-number{
+  color: var(--white-color);
+  font-weight: var(--fw-500);
+  letter-spacing: 0.1rem;
 
 }
 
