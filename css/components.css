@@ -1,3 +1,72 @@
+/* Cards Styles */
+
+.card{ 
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 447px;
+  height: 245px;
+  filter: drop-shadow(
+    0 0 5px black
+
+  );
+
+}
+
+.card--front{
+  background-image: url('/images/bg-card-front.png');
+  top: 20%;
+  left: 35%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+
+}
+
+.card__logo{
+  margin: 1rem;
+
+}
+
+.card__number{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  color: var(--white-color);
+  
+}
+
+.card__number-text{
+  font-weight: var(--fw-500);
+  font-size: 1.7rem;
+  letter-spacing: 0.3rem;
+
+}
+
+.card__details{
+  padding-inline: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--white-color);
+  
+}
+
+.card__owner{
+  text-transform: uppercase;
+  font-weight: var(--fw-500);
+
+}
+
+.card--back{
+  background-image: url('/images/bg-card-back.png');
+  position: absolute;
+  top: 55%;
+  left: 55%;
+
+}
+
+/* Form Styles */
+
 form{
   width: 100%;
   max-width: 400px;
@@ -7,6 +76,7 @@ form{
 .form__fields{
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 
 }
 
@@ -54,6 +124,7 @@ input:focus{ outline: none; border-color: var(--border-color); }
 }
 
 .form__button button{
+  cursor: pointer;
   margin-top: 1rem;
   border-radius: var(--border-radius);
   padding: 0.6rem;

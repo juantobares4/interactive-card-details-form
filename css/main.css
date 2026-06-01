@@ -31,8 +31,6 @@ main{
 
 .container__cards{
   position: relative;
-  display: flex;
-  align-items: center;
   min-height: 100dvh;
   background-image: url('/images/bg-main-desktop.png');
   background-size: cover;
