@@ -1,17 +1,18 @@
 /* Cards Styles */
 
-/* Front */
 .card{ 
   background-repeat: no-repeat;
   position: absolute;
-  min-width: 447px;
-  min-height: 245px;
+  width: 447px;
+  height: 245px;
   filter: drop-shadow(
     0 0 5px black
 
   );
 
 }
+
+/* Front */
 
 .card--front{
   background-image: url('/images/bg-card-front.png');
@@ -62,14 +63,14 @@
   background-image: url('/images/bg-card-back.png');
   top: 55%;
   left: 55%;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 
 }
 
 .card__cvc{
-  position: absolute;
-  top: 45%;
-  left: 65%;
+  padding-inline-end: 4rem;  
 
 }
 
@@ -77,6 +78,7 @@
   color: var(--white-color);
   font-weight: var(--fw-500);
   letter-spacing: 0.1rem;
+  font-size: 0.9rem;
 
 }
 
@@ -91,12 +93,13 @@ form{
 .form__fields{
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 
 }
 
 .form__row{
   display: flex;
+  align-items: flex-start;
   gap: 0.5em;
 
 }
@@ -104,17 +107,6 @@ form{
 .form__row input{
   min-width: 0;
   width: 100%;
-
-}
-
-#inputMonth,
-#inputYear{
-  flex: 1;
-
-}
-
-#inputCVC{
-  flex: 2;
 
 }
 
@@ -128,6 +120,7 @@ input{
 input:focus{ outline: none; border-color: var(--border-color); }
 
 .form__label{
+  text-wrap: nowrap;
   padding-bottom: 0.5rem;
 
 }
@@ -140,15 +133,127 @@ input:focus{ outline: none; border-color: var(--border-color); }
 
 .form__button button{
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   border-radius: var(--border-radius);
-  padding: 0.6rem;
-  min-width: 100%;
+  padding: 1rem;
+  width: 100%;
+  max-width: 400px;
   border: none;
   font-family: var(--main-font);
   background-color: var(--purple-950);
   color: var(--white-color);
+  font-weight: var(--fw-500);
 
 }
 
 .form__button button:hover{ background-color: hsl(278, 94%, 30%); }
+
+@media (max-width: 768px) {
+  .card{
+    padding: 20px 15px;
+    min-width: unset;
+    width: min(300px, 85vw);
+    aspect-ratio: 300 / 165;
+    height: auto;
+    min-height: unset;
+    background-size: contain;
+  
+  }
+
+  .card--back{
+    top: 3rem;
+    left: calc(50% + 6vw);
+    transform: translateX(-50%);
+  
+  }
+
+  .card--front{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    top: 9rem;
+    left: calc(50% - 3vw);
+    transform: translateX(-50%);
+    z-index: 1;
+  
+  }
+
+  .card__logo{
+    margin: 0;
+  
+  }
+
+  .card__number{
+    align-self: end;
+    padding: 0;
+    margin: 1rem 0rem;
+  
+  }
+
+  .card__number-text{
+    font-size: 0.9rem;
+
+  }
+
+  .card__details{
+    align-self: end;
+    padding: 0;
+  
+  }
+
+  .card__owner, 
+  .card__expiry{
+    font-size: 0.8rem;
+
+  }
+
+  .card__cvc{
+    padding-inline-end: 2rem;
+      
+  }
+
+  form{
+    max-width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  main{
+    grid-template-columns: 40% 60%;
+  }
+
+  .container__form{
+    padding-inline: 2rem;
+  }
+
+  .card{
+    width: 360px;
+    height: 198px;
+    min-width: unset;
+    min-height: unset;
+    background-size: cover;
+  }
+
+  .card--front{
+    top: 15%;
+    left: 10%;
+  }
+
+  .card--back{
+    top: 45%;
+    left: 25%;
+  }
+
+  .card__number-text{
+    font-size: 1.4rem;
+  }
+
+  .card__owner,
+  .card__expiry{
+    font-size: 0.9rem;
+  }
+}

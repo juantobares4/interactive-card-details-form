@@ -64,47 +64,62 @@
             name="cardnumber"
           >
         </div>
-        <div class="">
-          <div class="form__label">
-            <label 
-              for="inputMonth"
-            >
-              Exp. Date (mm/yy)
-            </label>
-          </div>
-          <div class="form__row">
-            <input 
+        <div class="form__row">
+          <div class="form__fields">
+            <div class="form__label">
+              <label 
+                for="inputMonth"
+              >
+                Exp. Date (mm/yy)
+              </label>
+            </div>
+            <input
               id="inputMonth"
               type="text"
               inputmode="numeric"
               maxlength="2"
-              placeholder="MM" 
-              aria-label="Month Expiration" 
+              placeholder="MM"
+              aria-label="Month Expiration"
               aria-describedby="basic-addon1"
               name="month"
-            >
-  
+            />
+          </div>
+          <div class="form__fields">
+            <div class="form__label">
+              <label 
+                aria-hidden="true">
+                &nbsp;
+              </label>
+            </div>
             <input
               id="inputYear"
               type="text"
               inputmode="numeric"
               maxlength="2"
-              placeholder="YY" 
-              aria-label="Year Expiration" 
+              placeholder="YY"
+              aria-label="Year Expiration"
               aria-describedby="basic-addon1"
               name="year"
-            >
-  
-            <input 
+            />
+          </div>
+          <div class="form__fields">
+            <div class="form__label">
+              <label 
+                for="inputCVC"
+              >
+                CVC
+              </label>
+            </div>
+            <input
               id="inputCVC"
               type="text"
               inputmode="numeric"
               maxlength="3"
-              placeholder="eg. 123" 
-              aria-label="CVC" 
+              placeholder="eg. 123"
+              aria-label="CVC"
               aria-describedby="basic-addon1"
               name="cvc"
-            >  
+            />
           </div>
         </div>
         <div class="form__button">
