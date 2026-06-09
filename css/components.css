@@ -38,13 +38,14 @@
 
 .card__number-text{
   font-weight: var(--fw-500);
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   letter-spacing: 0.3rem;
+  min-height: 35px;
 
 }
 
 .card__details{
-  padding-inline: 1.3rem;
+  padding-inline: 1.5rem;
   display: flex;
   justify-content: space-between;
   color: var(--white-color);

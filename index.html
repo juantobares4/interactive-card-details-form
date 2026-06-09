@@ -13,7 +13,7 @@
       <div class="card card--front">
         <img class="card__logo" src="/images/card-logo.svg" alt="Card Logo Image">
         <div class="card__number">
-          <p class="card__number-text">0000 0000 0000 0000</p>
+          <p class="card__number-text" id="cardNumber"></p>
         </div>
         <div class="card__details">
           <span class="card__owner">Jane Appleseed</span>
@@ -31,7 +31,7 @@
       </div>
     </aside>
     <section class="container__form">
-      <form action="">
+      <form id="formCardData" action="">
         <div class="form__fields">
           <div class="form__label">
             <label 
@@ -59,9 +59,11 @@
           <input
             id="inputCardNumber"
             type="text" 
+            inputmode="numeric"
+            maxlength="19"
             placeholder="e.g. 1234 5678 9123 0000"
             aria-label="Card number" 
-            name="cardnumber"
+            name="cardNumber"
           >
         </div>
         <div class="form__row">
