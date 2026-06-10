@@ -1,24 +1,50 @@
 const formCardNumber = document.getElementById('inputCardNumber');
-const cardNumberText = document.getElementById('cardNumber');
+const formCardholder = document.getElementById('inputCardholder');
 
-const handleFormDataInput = () => {
-  const regex = /[a-zA-Z]/;
+const cardNumberText = document.getElementById('cardNumber');
+const cardholderText = document.getElementById('cardholder');
+
+const renderNumberCard = (value = null) => {
+  const exampleNumber = '0000 0000 0000 0000';
+
+  cardNumberText.textContent = value || exampleNumber;
+
+};
+
+const renderCardholderName = (name = null) => {
+  const exampleName = 'Jane Appleseed';
+
+  cardholderText.textContent = name || exampleName;
+
+};
+
+const handleFormDataInput = () => { 
+  const excludeLetters = /[a-zA-Z]/;
+  const allowLetters = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/;
 
   formCardNumber.addEventListener('input', (event) => {
-    if (regex.test(event.target.value)) return;
+    if (excludeLetters.test(event.target.value)) return;
 
     const inputLength = event.target.value.length;
-    let numberCard = event.target.value;
-    
-    cardNumberText.textContent = numberCard;
-    
+    const numberCard = event.target.value;
+      
     if (inputLength === 4 || inputLength === 9 || inputLength === 14) {
       event.target.value = numberCard + ' ';
       cardNumberText.textContent = numberCard + ' ';
-
+      
     };
-
     
+    renderNumberCard(event.target.value);
+  
+  });
+
+  formCardholder.addEventListener('input', (event) => {
+    const inputCardholderName = event.target.value.trim();
+
+    if (!allowLetters.test(inputCardholderName)) return;
+
+    renderCardholderName(inputCardholderName);
+
   });
 
 };
@@ -29,6 +55,8 @@ const handleFormDataSubmit = () => {
 };
 
 const main = () => {
+  renderNumberCard();
+  renderCardholderName();
   handleFormDataInput();
 
 };

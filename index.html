@@ -16,7 +16,7 @@
           <p class="card__number-text" id="cardNumber"></p>
         </div>
         <div class="card__details">
-          <span class="card__owner">Jane Appleseed</span>
+          <span class="card__owner" id="cardholder"></span>
           <p class="card__expiry">
             <span id="expiryMonth">00</span>
             /
@@ -42,7 +42,8 @@
           </div>
           <input 
             id="inputCardholder"
-            type="text" 
+            type="text"
+            maxlength="30" 
             placeholder="eg. Jane Appleseed" 
             aria-label="Cardholder" 
             name="cardholder"
