@@ -1,4 +1,4 @@
-import { getRegExp, sliceString } from "./utils.js";
+import { getFormData, getRegExp, sliceString, validateFormData } from "./utils.js";
 
 const formCardNumber = document.getElementById('inputCardNumber');
 const formCardholder = document.getElementById('inputCardholder');
@@ -121,7 +121,17 @@ const handleFormDataInput = () => {
 };
 
 const handleFormDataSubmit = () => {
+  const form = document.getElementById('formCardData');
 
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formInfo = getFormData(form);
+    
+    console.log(validateFormData(formInfo).isValidForm);
+    console.log(validateFormData(formInfo).message);
+
+  });
 
 };
 
@@ -132,6 +142,7 @@ const main = () => {
   renderExpiryYear();
   renderSecurityCode();
   handleFormDataInput();
+  handleFormDataSubmit();
 
 };
 
