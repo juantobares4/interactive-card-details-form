@@ -37,13 +37,15 @@ export const getFormData = (form) => {
 export const validateFormData = (data) => {
   let objectData = {
     isValidForm: false,
-    message: ''
+    message: '',
+    invalidField: null
 
   };
 
   for (const [key, value] of Object.entries(data)) {
     if (!value) {
       objectData.message = "Can't be blank";
+      objectData.invalidField = key;
   
       return objectData;
       
@@ -51,6 +53,7 @@ export const validateFormData = (data) => {
       if (key === 'cardholder') {
         if (!getRegExp('letters').test(value)) {
           objectData.message = 'Wrong format, letters only';
+          objectData.invalidField = key;
 
           return objectData;
         };
@@ -58,6 +61,7 @@ export const validateFormData = (data) => {
       } else if (key === 'cardNumber' || key === 'cvc') {
         if (!getRegExp('numbers').test(value)) {
           objectData.message = 'Wrong format, numbers only';
+          objectData.invalidField = key;
         
           return objectData;
         };
@@ -65,6 +69,7 @@ export const validateFormData = (data) => {
       } else if (key === 'month') {
         if (!getRegExp('month').test(value)) {
           objectData.message = 'Wrong format';
+          objectData.invalidField = key;
           
           return objectData;
         };
@@ -79,6 +84,5 @@ export const validateFormData = (data) => {
   objectData.isValidForm = true;
   
   return objectData;
-
 
 };

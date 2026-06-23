@@ -130,6 +130,7 @@ const handleFormDataSubmit = () => {
     
     console.log(validateFormData(formInfo).isValidForm);
     console.log(validateFormData(formInfo).message);
+    console.log(validateFormData(formInfo).invalidField);
 
   });
 
