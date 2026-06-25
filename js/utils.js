@@ -22,6 +22,11 @@ export const getRegExp = (type) => {
   
 };
 
+export const getCurrentYear = () => {
+  return new Date().getFullYear();
+
+};
+
 export const sliceString = (text, start, end) => {
   return String(text).slice(start, end);
 
@@ -45,7 +50,7 @@ export const validateFormData = (data) => {
   for (const [key, value] of Object.entries(data)) {
     if (!value) {
       objectData.message = "Can't be blank";
-      objectData.invalidField = key;
+      objectData.invalidField = key === 'year' || 'month' ? 'date' : key;
   
       return objectData;
       
@@ -68,12 +73,20 @@ export const validateFormData = (data) => {
 
       } else if (key === 'month') {
         if (!getRegExp('month').test(value)) {
-          objectData.message = 'Wrong format';
-          objectData.invalidField = key;
+          objectData.message = 'Invalid month';
+          objectData.invalidField = 'date';
           
           return objectData;
         };
       
+      } else if (key === 'year') {
+        if (value < Number(sliceString(getCurrentYear(), 2))) {
+          objectData.message = 'Invalid year';
+          objectData.invalidField = 'date';
+
+          return objectData;
+        };
+
       };
 
     };

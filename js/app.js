@@ -1,4 +1,4 @@
-import { getFormData, getRegExp, sliceString, validateFormData } from "./utils.js";
+import { getCurrentYear, getFormData, getRegExp, sliceString, validateFormData } from "./utils.js";
 
 const formCardNumber = document.getElementById('inputCardNumber');
 const formCardholder = document.getElementById('inputCardholder');
@@ -39,11 +39,18 @@ const renderExpiryYear = (year = null) => {
 const renderSecurityCode = (cvcCode = null) => {
   cvcNumberText.textContent = cvcCode || '000';
 
-}
+};
+
+const activeStatesMessage = ({ element, msg }) => {
+  const elementId = document.getElementById(`${element}Message`);
+
+  elementId.textContent = msg;
+
+};
 
 const handleFormDataInput = () => { 
-  const currentYear = new Date().getFullYear();
-  const parseCurrentYear = Number(currentYear.toString().slice(2));
+  const currentYear = getCurrentYear();
+  const parseCurrentYear = Number(sliceString(currentYear, 2));
 
   formCardNumber.addEventListener('input', (event) => {
     const inputLength = event.target.value.length;
@@ -127,10 +134,10 @@ const handleFormDataSubmit = () => {
     event.preventDefault();
 
     const formInfo = getFormData(form);
-    
-    console.log(validateFormData(formInfo).isValidForm);
-    console.log(validateFormData(formInfo).message);
-    console.log(validateFormData(formInfo).invalidField);
+    const nameField = validateFormData(formInfo).invalidField;
+    const message = validateFormData(formInfo).message;
+
+    activeStatesMessage({ element: nameField, msg: message });
 
   });
 
