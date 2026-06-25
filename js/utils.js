@@ -50,7 +50,7 @@ export const validateFormData = (data) => {
   for (const [key, value] of Object.entries(data)) {
     if (!value) {
       objectData.message = "Can't be blank";
-      objectData.invalidField = key === 'year' || 'month' ? 'date' : key;
+      objectData.invalidField = ['year', 'month'].includes(key) ? 'date' : key;
   
       return objectData;
       

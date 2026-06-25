@@ -41,7 +41,7 @@ const renderSecurityCode = (cvcCode = null) => {
 
 };
 
-const activeStatesMessage = ({ element, msg }) => {
+const errorMessage = ({ element, msg }) => {
   const elementId = document.getElementById(`${element}Message`);
 
   elementId.textContent = msg;
@@ -136,8 +136,10 @@ const handleFormDataSubmit = () => {
     const formInfo = getFormData(form);
     const nameField = validateFormData(formInfo).invalidField;
     const message = validateFormData(formInfo).message;
+    const isValidForm = validateFormData(formInfo).isValidForm;
 
-    activeStatesMessage({ element: nameField, msg: message });
+    if (!isValidForm) errorMessage({ element: nameField, msg: message });
+    else console.log('Formulario válido')
 
   });
 
