@@ -80,7 +80,7 @@ export const validateFormData = (data) => {
         };
       
       } else if (key === 'year') {
-        if (value < Number(sliceString(getCurrentYear(), 2))) {
+        if (value < Number(sliceString(getCurrentYear(), 2)) || (!getRegExp('numbers').test(value))) {
           objectData.message = 'Invalid year';
           objectData.invalidField = 'date';
 

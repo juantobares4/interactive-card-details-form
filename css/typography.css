@@ -25,3 +25,11 @@ input[type="text"]{
   font-family: var(--main-font);
 
 }
+
+button{
+  font-family: var(--main-font);
+  color: var(--white-color);
+  font-weight: var(--fw-500);
+  font-size: 1rem;
+
+}

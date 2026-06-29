@@ -48,6 +48,11 @@ const errorMessage = ({ element, msg }) => {
 
 };
 
+const successMessage = ({ msg }) => {
+  const successSubtitle = document.getElementById('successSubtitle').textContent = msg;
+
+};
+
 const handleFormDataInput = () => { 
   const currentYear = getCurrentYear();
   const parseCurrentYear = Number(sliceString(currentYear, 2));
@@ -129,17 +134,33 @@ const handleFormDataInput = () => {
 
 const handleFormDataSubmit = () => {
   const form = document.getElementById('formCardData');
-
+  const successContainer = document.getElementById('successMessage');
+  
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formInfo = getFormData(form);
-    const nameField = validateFormData(formInfo).invalidField;
-    const message = validateFormData(formInfo).message;
-    const isValidForm = validateFormData(formInfo).isValidForm;
+    const validateData = validateFormData(formInfo);
 
-    if (!isValidForm) errorMessage({ element: nameField, msg: message });
-    else console.log('Formulario válido')
+    if (!validateData.isValidForm) {
+      successContainer.classList.add('hidden');
+
+      errorMessage({ 
+        element: validateData.invalidField, 
+        msg: validateData.message 
+
+      });
+
+    } else {
+      form.classList.add('hidden');
+      successContainer.classList.remove('hidden');
+      
+      successMessage({ 
+        msg: validateData.message 
+      
+      });
+
+    };
 
   });
 
