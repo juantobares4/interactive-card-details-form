@@ -69,6 +69,11 @@ export const validateFormData = (data) => {
           objectData.invalidField = key;
         
           return objectData;
+        } else if ((key === 'cardNumber' && String(value).length < 19) || key === 'cvc' && String(value).length < 3) {
+          objectData.message = 'Wrong format, incorrect length';
+          objectData.invalidField = key;          
+
+          return objectData;
         };
 
       } else if (key === 'month') {
