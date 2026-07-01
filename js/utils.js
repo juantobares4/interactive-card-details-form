@@ -40,7 +40,7 @@ export const getFormData = (form) => {
 };
 
 export const validateFormData = (data) => {
-  let objectData = {
+  const objectData = {
     isValidForm: false,
     message: '',
     invalidField: null
